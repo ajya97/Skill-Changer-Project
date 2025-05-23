@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Exchange</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(#94bbe9, #eeaeca, #94bbe9);
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            text-align: left;
+            padding: 20px;
+            background: transparent;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            font-size: 3em;
+            color: #e74c3c;
+            margin: 0;
+            background: transparent;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            background: transparent;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        .text {
+            height: 45vh;
+            width: 45vw;
+            margin-top: 10px;
+            font-size: 18px;
+            font-family: arial;
+            text-transform: capitalize;
+            line-height: 1.8;
+        }
+
+        .register-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #eb0000;
+            background: transparent;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: 0.3s ease-in-out;
+        }
+        .register-btn:hover {
+            background: linear-gradient(to right, #153d2d, #079ba6);
+        }
+        .register-btn i {
+      margin-left: 8px;
+    }
+
+
+        .img {
+            height: 45vh;
+            width: 45vw;
+            margin-left: 46vw;
+            margin-right: 10px;
+            font-size: 18px;
+            font-family: arial;
+        }
+
+        .header {
+            display: flex;
+            margin-left: 75vw;
+            justify-content: space-around;
+            padding: 10px;
+            height: 40px;
+        }
+        .run {
+            font-size: 30px;
+            text-transform: capitalize;
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+            height: 55px;
+            padding: 5px;
+
+        }
+        .book-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #ff6a00;
+            background: linear-gradient(90deg, #f9ae34, #f94c66, #f55d9e);
+            color: #000;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: 0.3s ease-in-out;
+        }
+
+        .book-btn i {
+            margin-left: 8px;
+            color: inherit;
+        }
+
+        .book-btn:hover {
+
+            border: 2px solid;
+            border-image: linear-gradient(90deg, #f9ae34, #f94c66, #f55d9e);
+            border-image-slice: 1;
+            border-radius: 30px;
+        }
+        .login-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #eb0000;
+      background: linear-gradient(90deg, #00f0ff, #ff00f2);
+      background: transparent;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: 0.3s ease-in-out;
+    }
+
+    .login-btn i {
+      margin-left: 8px;
+    }
+
+    .login-btn:hover {
+      background: linear-gradient(to right, #153d2d, #079ba6);
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="/register" class="register-btn">
+                Register <i class="fa-solid fa-lock"></i>
+            </a>
+            <a href="/login" class="login-btn">
+                LOGIN <i class="fa-solid fa-lock"></i>
+            </a>
+
+        </div>
+        <div class="run">
+            <marquee scrollamount="12s">Skill Exchange is a platform to connect with people to learn new skills, share
+                your expertise, and
+                grow professionally. Join today and start your learning journey!"</marquee>
+        </div>
+        <h1>SKILL</h1>
+        <h2>EXCHANGE</h2>
+        <div class="content">
+            <div class="text">
+                <p>
+                    Welcome to Skill Exchange, your premier platform to connect with like-minded individuals eager to
+                    share
+                    and acquire new skills. Whether you’re looking to teach your expertise or learn something new, our
+                    community-driven approach ensures that you find the perfect match to help you grow both personally
+                    and
+                    professionally. Join us today and start your journey towards continuous learning and development.
+                </p>
+            </div>
+            <div class="image">
+                <img src="{{url_for('static',filename='home.jpg')}}" alt="Skill Exchange" height="350" width="500">
+            </div>
+        </div>
+
+
+        <a href="/login" class="book-btn">
+            Get Started <i class="fa-solid fa-book-open-reader"></i>
+        </a>
+    </div>
+</body>
+
+</html>
