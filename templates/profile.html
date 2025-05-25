@@ -11,7 +11,7 @@
   margin: 0;
   padding: 0;
   
-  background-image: url(profile_img.jpg);
+  background-image: url('{{url_for("static",filename="profile_img.jpg")}}');
   background-size: cover;
 }
 
@@ -96,31 +96,30 @@ button:hover {
   <header>
     <h1>Skill Exchange</h1>
     <nav>
-      <a href="#">Home</a>
-      <a href="#">Dashboard</a>
+      <a href="/home">Home</a>
+      <a href="/profile">Dashboard</a>
       <a href="#">Find Neighbors</a>
-      <a href="#">Logout</a>
+      <a href="/logout">Logout</a>
     </nav>
   </header>
 
   <main>
     <section class="profile-card">
-      <h2>Welcome, <span class="username">dave_shukla</span>!</h2>
+      <h2>Welcome, <span class="username">{{name}}</span>!</h2>
       <h3>Your Profile</h3>
       <hr />
 
-      <p><strong>Full Name:</strong> Example Name</p>
-      <p><strong>Location:</strong> Example Address</p>
-      <p><strong>Skills Offered:</strong> Example Skills</p>
-      <p><strong>Skills Wanted:</strong> Example Skills</p>
-      <p><strong>Availability:</strong> Example Availability</p>
-      <p><strong>Contact Preference:</strong> Example Contact</p>
-      <p><strong>Bio:</strong> Example Bio</p>
+      <p><strong>Full Name:</strong> {{name}}</p>
+      <p><strong>Email:</strong> {{email}}</p>
+      <p><strong>Location:</strong> {{loc}}</p>
+      <p><strong>Skills Offered:</strong> {{so}}</p>
+      <p><strong>Skills Wanted:</strong> {{sw}}</p>
+      <p><strong>Availability:</strong> {{ava}}</p>
+      <p><strong>Contact Preference:</strong> {{phone}}</p>
+      <p><strong>Bio:</strong> {{bio}}</p>
 
       <div class="buttons">
-        <button>
-        <a href="save.html" class="buttons">Edit profile </a>
-        </button>
+        <button onclick="window.location.href='/editprofile'" >Edit profile</button>
         <button>Find Neighbors</button>
         <button>Neighbors</button>
       </div>
