@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Skill Exchange</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    /* Center the form on the page */
     body {
       margin: 0;
       height: 100vh;
@@ -13,15 +15,11 @@
       justify-content: center;
       align-items: center;
       font-family: Arial, sans-serif;
-      /* background: linear-gradient(135deg, #fceabb, #f8b500); */
-      /* background-image: url(bg1.jpg); */
       background-size: cover;
     }
 
-    /* Form container styling */
     .container {
-      /* background: white; */
-      background: transparent;      
+      background: transparent;
       padding: 40px;
       border: 3px solid black;
       border-radius: 12px;
@@ -30,7 +28,6 @@
       text-align: center;
     }
 
-    /* Headings */
     h1 {
       color: #011ce4;
       margin-bottom: 5px;
@@ -42,7 +39,6 @@
       margin-bottom: 30px;
     }
 
-    /* Input fields */
     form input {
       width: 85%;
       padding: 12px;
@@ -50,9 +46,8 @@
       border: 1px solid #ccc;
       border-radius: 6px;
       font-size: 14px;
-      background: transparent; 
+      background: transparent;
       color: #07a107;
-      
     }
 
     .login-btn {
@@ -63,42 +58,88 @@
       font-size: 16px;
       font-weight: bold;
       color: #eb0000;
-      background: linear-gradient(90deg, #00f0ff, #ff00f2);
       background: transparent;
       text-decoration: none;
       border-radius: 30px;
       transition: 0.3s ease-in-out;
     }
 
-    .login-btn i {
-      margin-left: 8px;
-    }
-
     .login-btn:hover {
       background: linear-gradient(to right, #153d2d, #079ba6);
     }
+
+    .password-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .password-wrapper input {
+      width: 85%;
+    }
+
+    .password-wrapper .toggle-icon {
+      position: absolute;
+      right: 35px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #333;
+    }
+
+    .forgot { 
+      position: absolute;
+      transform: translateX(0%);
+    }
+    a:hover{
+    border-bottom: 2px solid rgb(20, 227, 71);
+   
+    }
+
+    a {
+      text-decoration: none;
+    }
   </style>
 </head>
+
 <body style="background-image: url('{{ url_for('static',filename='homeb.jpg') }}')">
   <div class="container">
     <h1>Skill Exchange™</h1>
     <h2>Welcome Friend!</h2>
     <form action="/login" method="post">
       <div>
-      <i class="fa-solid fa-user" class="icon1"></i>
-      <input type="text" name="userid" placeholder="user name" required>
-      <!-- <input type="text" placeholder="Username " required > -->
-    </div>
-    <div>
-      <i class="fa-solid fa-lock" class="icon1"></i>
-      <input type="password" name="pass" placeholder="Password" required>
-    </div>
-    <h4>{{name}}</h4>
+        <i class="fa-solid fa-user"></i>
+        <input type="text" name="userid" placeholder="User Name" required>
+      </div>
 
-    <button class="login-btn btn" type="submit">Submit</button>
-  
+      <div class="password-wrapper">
+        <i class="fa-solid fa-lock"></i>
+        <input type="password" id="password" name="pass" placeholder="Password" required>
+        <i class="fa-solid fa-eye toggle-icon" id="togglePassword"></i>
+      </div>
 
+      <h4>{{name}}</h4>
+      <button class="login-btn btn" type="submit">Submit</button>
     </form>
+    <div>
+      <p>New User? <a href="#"> Sign Up </a></p>
+    </div>
+    <div class="forgot"><a href="#"> Forgot password</a></div>
   </div>
+
+  <script>
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('password');
+
+    togglePassword.addEventListener('click', function () {
+      const type = passwordInput.type === 'password' ? 'text' : 'password';
+      passwordInput.type = type;
+
+      this.classList.toggle('fa-eye');
+      this.classList.toggle('fa-eye-slash');
+    });
+  </script>
 </body>
+
 </html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rate Service</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+    background-image: url(rating_img.png);
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+
+.rate-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 25px;
+  border: 2px solid #d9b9b9;
+  border-radius: 10px;
+  background: rgba(86, 184, 61, 0.874);
+box-shadow: 8px 8px 15px #7e0606, -8px -8px 15px #0856ba;
+}
+
+.rate-container h2 {
+  color: #a22;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: bold;
+}
+
+select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+textarea {
+  height: 80px;
+  resize: vertical;
+}
+
+.submit-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background-color: #a22;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.submit-btn i {
+  margin-right: 8px;
+}
+
+.submit-btn:hover {
+  background-color: #800;
+}
+
+  </style>
+  <!-- Font Awesome for star icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="rate-container">
+    <h2>Rate Service for <span class="username">Alice Johnson</span></h2>
+
+    <form>
+      <label for="communication">Communication:</label>
+      <select id="communication">
+        <option value="1">1 - Poor</option>
+        <option value="2">2 - Fair</option>
+        <option value="3" selected>3 - Average</option>
+        <option value="4">4 - Good</option>
+        <option value="5">5 - Excellent</option>
+      </select>
+
+      <label for="reliability">Reliability:</label>
+      <select id="reliability">
+        <option disabled selected>Select rating</option>
+        <option value="1">1 - Poor</option>
+        <option value="2">2 - Fair</option>
+        <option value="3">3 - Average</option>
+        <option value="4">4 - Good</option>
+        <option value="5">5 - Excellent</option>
+      </select>
+
+      <label for="professionalism">Professionalism:</label>
+      <select id="professionalism">
+        <option disabled selected>Select rating</option>
+        <option value="1">1 - Poor</option>
+        <option value="2">2 - Fair</option>
+        <option value="3">3 - Average</option>
+        <option value="4">4 - Good</option>
+        <option value="5">5 - Excellent</option>
+      </select>
+
+      <label for="experience">Overall Experience:</label>
+      <select id="experience">
+        <option disabled selected>Select rating</option>
+        <option value="1">1 - Poor</option>
+        <option value="2">2 - Fair</option>
+        <option value="3">3 - Average</option>
+        <option value="4">4 - Good</option>
+        <option value="5">5 - Excellent</option>
+      </select>
+
+      <label for="comments">Additional Comments:</label>
+      <textarea id="comments" placeholder="Write your comments here..."></textarea>
+
+      <button type="submit" class="submit-btn">
+        <i class="fa-solid fa-star"></i> Submit Rating
+      </button>
+    </form>
+  </div>
+</body>
+</html>

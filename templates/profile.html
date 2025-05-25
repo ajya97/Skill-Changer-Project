@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skill Exchange Profile</title>
+ <style>
+    body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  
+  background-image: url(profile_img.jpg);
+  background-size: cover;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0; 
+}
+
+.profile-card {
+  background: white;
+  background: transparent;
+  border: 2px solid #d1b7b7;
+  border-radius: 10px;
+  padding: 30px 40px;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 8px 8px 15px #84a4d7, -8px -8px 15px #f38f8f;
+}
+
+.profile-card h2 {
+  color: #a22;
+  margin-top: 0;
+}
+
+.profile-card h3 {
+  margin: 10px 0;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.profile-card p {
+  text-align: left;
+  margin: 10px 0;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+button {
+  background-color: #dbe9dc;
+  color: #a22;
+  border: 2px solid #a22;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: #a22;
+  color: white;
+}
+
+ </style>
+</head>
+<body>
+  <header>
+    <h1>Skill Exchange</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Dashboard</a>
+      <a href="#">Find Neighbors</a>
+      <a href="#">Logout</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="profile-card">
+      <h2>Welcome, <span class="username">dave_shukla</span>!</h2>
+      <h3>Your Profile</h3>
+      <hr />
+
+      <p><strong>Full Name:</strong> Example Name</p>
+      <p><strong>Location:</strong> Example Address</p>
+      <p><strong>Skills Offered:</strong> Example Skills</p>
+      <p><strong>Skills Wanted:</strong> Example Skills</p>
+      <p><strong>Availability:</strong> Example Availability</p>
+      <p><strong>Contact Preference:</strong> Example Contact</p>
+      <p><strong>Bio:</strong> Example Bio</p>
+
+      <div class="buttons">
+        <button>
+        <a href="save.html" class="buttons">Edit profile </a>
+        </button>
+        <button>Find Neighbors</button>
+        <button>Neighbors</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
