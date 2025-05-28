@@ -6,7 +6,8 @@ pymysql.install_as_MySQLdb()
 
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "mysql://root:@localhost/blog"
+app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///database.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'secret'
 db = SQLAlchemy(app)
 
@@ -16,11 +17,17 @@ class skdb(db.Model):
     Email = db.Column(db.String(50), nullable=True)
     Password = db.Column(db.String(50), nullable=True)
     Ph_num = db.Column(db.Integer(), nullable=True)
-    Location = db.Column(db.String(50), nullable=False)
-    Skills_Offered = db.Column(db.String(50), nullable=False)
-    Skills_Wanted = db.Column(db.String(50), nullable=False)
-    Availability = db.Column(db.String(50), nullable=False)
-    Bio = db.Column(db.String(500), nullable=False)
+    Location = db.Column(db.String(50), nullable=True)
+    Skills_Offered = db.Column(db.String(50), nullable=True)
+    Skills_Wanted = db.Column(db.String(50), nullable=True)
+    Availability = db.Column(db.String(50), nullable=True)
+    Bio = db.Column(db.String(500), nullable=True)
+
+
+# Create table if not exists
+with app.app_context():
+    # db.drop_all()   # ⚠️ This deletes all data
+    db.create_all() # Recreates tables with new schema
 
 
 
