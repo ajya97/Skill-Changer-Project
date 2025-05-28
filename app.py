@@ -1,6 +1,4 @@
 import requests
-
-
 from flask import Flask, request, render_template, redirect, url_for, flash, session
 from flask_sqlalchemy import SQLAlchemy
 import pymysql
@@ -26,10 +24,10 @@ class skdb(db.Model):
     Bio = db.Column(db.String(500), nullable=True)
 
 
-# Create table if not exists
+# Create table 
 with app.app_context():
-    # db.drop_all()   # ⚠️ This deletes all data
-    db.create_all() # Recreates tables with new schema
+    # db.drop_all()  
+    db.create_all() 
 
 
 
